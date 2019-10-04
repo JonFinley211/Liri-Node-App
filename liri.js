@@ -2,7 +2,9 @@ var selector = process.argv[2]
 var term = process.argv.slice(3).join(" ");
 
 require('dotenv').config();
+const moment = require("moment");
 var axios = require("axios");
+// var request = require('request')
 console.log(term);
 // Make it so liri.js can take in one of the following commands:
 var keys= require("./keys.js")
@@ -49,6 +51,10 @@ if (selector ==="movie-this"){
   // 
   runmovie()
   
+}
+if (selector==="concert-this"){
+  runbands(term)
+  console.log("finding events")
 }
 else if (selector === "show") {
     console.log("shows it works")
@@ -109,7 +115,41 @@ axios.get(queryUrl).then(
     console.log(error.config);
   });
 }
-// }
+
+
+
+
+
+function runbands(term){
+  axios.get("https://rest.bandsintown.com/artists/"+ term +"/events?app_id=codingbootcamp")
+  .then(
+    function (response) {
+      console.log("upcoming city : " +response.data[0].venue.city);
+      console.log("venue         : "+response.data[0].venue.name);
+      console.log("Date of Show  : " +moment(response.data[0].datetime).format('MM/DD/YYYY'));
+    });
+
+  }
+
+// request(queryUrl, function(error, response, body) {
+
+//   if (!error && response.statusCode === 200) {
+// console.log()
+//     // var JS = JSON.parse(body);
+    // for (i = 0; i < JS.length; i++)
+    // {
+    //   var dateTime = JS[i].datetime;
+    //     var month = dateTime.substring(5,7);
+    //     var year = dateTime.substring(0,4);
+    //     var day = dateTime.substring(8,10);
+    //     var dateForm = month + "/" + day + "/" + year
+  
+    //   console.log("Name: " + JS[i].venue.name));
+    //   console.log("City: " + JS[i].venue.city));
+    //   console.log("Date: " + dateForm));
+
+
+    
 
 
 //   spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
