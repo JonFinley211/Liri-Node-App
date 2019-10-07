@@ -3,10 +3,8 @@ var term = process.argv.slice(3).join(" ");
 
 require('dotenv').config();
 const moment = require("moment");
+const fs = require("fs");
 var axios = require("axios");
-// var request = require('request')
-console.log(term);
-// Make it so liri.js can take in one of the following commands:
 var keys= require("./keys.js")
 
 var Spotify = require('node-spotify-api');
@@ -55,6 +53,9 @@ if (selector ==="movie-this"){
 if (selector==="concert-this"){
   runbands(term)
   console.log("finding events")
+}
+if (selector==="dowhat-it-says"){
+  doWhat()
 }
 else if (selector === "show") {
     console.log("shows it works")
@@ -130,6 +131,36 @@ function runbands(term){
     });
 
   }
+
+  function doWhat() {
+    // Use fs to read the random.txt file and run the search
+    fs.readFile("random.txt", "utf8", function (error, data) {
+        // If the code experiences any errors it will log the error to the console.
+        if (error) {
+            return console.log(error);
+        }
+        // We will then run the search
+        console.log(data);
+
+        // Then split it by commas (to make it more readable)
+        let dataArr = data.split(",");
+
+        // We will then re-display the content as an array for later use.
+        let choice = dataArr[0];
+        let value = dataArr[1];
+
+        function doSearch() {
+            if (choice === "concert-this") {
+                concertThis(value);
+            } else if (choice === "spotify-this-song") {
+                spotifyThis(value);
+            } else if (choice === "movie-this") {
+                movieThis(value);
+            }
+        }
+        doSearch();
+    });
+};
 
 // request(queryUrl, function(error, response, body) {
 
