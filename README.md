@@ -7,25 +7,25 @@ LIRI will then give you the options for how use the app.
 ## Search Concerts with Bands In Town
 To search for a concert just type "node liri concert-this **any artist who is touring**".
 LIRI will then take the search and apply it to the Bands In Town API and return the soonest result for a concert for that artist. 
-**Below is an image of a BandsInTown search. I underlined in red how to type the command.**
+**Below is an image of a BandsInTown search.**
 
 ![liri concert](/images/doc1.png)
 
 ## Search Songs on Spotify
 To search for a song just type "node liri spotify-this-song **any song title**".
-LIRI will search the Spotify API and return several relevant results including links to listen to a portion of the song. **Below is an image of a Spotify search. I underlined in red how to type the command.**
+LIRI will search the Spotify API and return several relevant results including links to listen to a portion of the song. **Below is an image of a Spotify search. I underlined in I highlighted how to type the command.**
 
 ![liri spotify](/images/doc3.png)
 
 ## Search Movies with OMDB
 To search for a movie just type "node liri movie-this **any movie title>".
-LIRI will search the Open Movie Database API and return the most relevant movie as well as Rotten Tomatoes score, year, actors, plot and more. **Below is an image of an OMDB search. I underlined in red how to type the command.**
+LIRI will search the Open Movie Database API and return the most relevant movie as well as Rotten Tomatoes score, year, actors, plot and more. **Below is an image of an OMDB search. .**
 
 ![liri movie](/images/doc2.png)
 
-## Search something random
+## Search something from a text file
 Lastly, if you're not sure what to search for you can simply run: "node liri do-what-it-says".
-This will return a random search from the file "random.txt". It could be a movie, concert, or song result. Currently it returns a song search for I "Want it That Way", if you haven't seen it I recommend it. **Below is an image of a random search. I underlined in red how to type the command.**
+This will return a random search from the file "random.txt". It could be a movie, concert, or song result. Currently it returns a song search for I "Want it That Way", if you haven't seen it I recommend it. **Below is an image of a random search.no**
 
 ![liri random](/images/doc4.png)
 
