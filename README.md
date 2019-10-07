@@ -25,9 +25,9 @@ LIRI will search the Open Movie Database API and return the most relevant movie 
 
 ## Search something random
 Lastly, if you're not sure what to search for you can simply run: "node liri do-what-it-says".
-This will return a random search from the file "random.txt". It could be a movie, concert, or song result. Currently it returns a movie search for Silverado, if you haven't seen it I recommend it. **Below is an image of a random search. I underlined in red how to type the command.**
+This will return a random search from the file "random.txt". It could be a movie, concert, or song result. Currently it returns a song search for I "Want it That Way", if you haven't seen it I recommend it. **Below is an image of a random search. I underlined in red how to type the command.**
 
-![liri random](/images/do.png)
+![liri random](/images/doc4.png)
 
 ## To create LIRI ...
 I had to get access to the three API's that were used to power the app; Spotify, BandsInTown, and OMDB. I created a .env file to hide the Spotify keys. These included a Client ID and a Secret Key. These were then called into a keys.js file, which was then required into the main liri.js file. This allows the keys to remain secret even while saving my work publicly to GitHub.

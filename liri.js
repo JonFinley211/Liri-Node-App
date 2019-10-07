@@ -11,7 +11,7 @@ var Spotify = require('node-spotify-api');
 // var spotify = new Spotify(keys.spotify)
 var spotify = new Spotify(keys.spotify);
 
-function runspot(){
+function runspot(term){
 spotify.search({ type: 'track', query: term }, function(err, data) {
   if (err) {
     return console.log('Error occurred: ' + err);
@@ -26,27 +26,20 @@ console.log("this song's album name :   "+ data.tracks.items[0].album.name);
 });
  }
 
-
-
-
-
-
-
 console.log(selector)
 if (!selector){
   console.log("concert-this,spotify-this-song,movie-this,do-what-it-says`")
 }
 if (!term){
-    console.log("please input")
+   
 }
 if (selector === "spotify-this-song") {
-  runspot()
-    console.log("spotify is searching")
+  runspot(term)
 }
 if (selector ==="movie-this"){
-  // if (!term){
-  //   term='Mr.Nobody'
-  // 
+  if (!term){
+    term='Mr.Nobody'
+  }
   runmovie()
   
 }
@@ -54,8 +47,9 @@ if (selector==="concert-this"){
   runbands(term)
   console.log("finding events")
 }
-if (selector==="dowhat-it-says"){
+if (selector==="do-what-it-says"){
   doWhat()
+  console.log("doing what your say")
 }
 else if (selector === "show") {
     console.log("shows it works")
@@ -117,10 +111,6 @@ axios.get(queryUrl).then(
   });
 }
 
-
-
-
-
 function runbands(term){
   axios.get("https://rest.bandsintown.com/artists/"+ term +"/events?app_id=codingbootcamp")
   .then(
@@ -146,53 +136,25 @@ function runbands(term){
         let dataArr = data.split(",");
 
         // We will then re-display the content as an array for later use.
-        let choice = dataArr[0];
-        let value = dataArr[1];
-
+        let selector = dataArr[0];
+        let term = dataArr[1];
         function doSearch() {
-            if (choice === "concert-this") {
-                concertThis(value);
-            } else if (choice === "spotify-this-song") {
-                spotifyThis(value);
-            } else if (choice === "movie-this") {
-                movieThis(value);
+            if (selector === "concert-this") {
+                runbands();
+            } else if (selector === "spotify-this-song") {
+                runspot(term,selector);
+            } else if (selector === "movie-this") {
+                runmovie();
+
             }
         }
         doSearch();
     });
 };
 
-// request(queryUrl, function(error, response, body) {
-
-//   if (!error && response.statusCode === 200) {
-// console.log()
-//     // var JS = JSON.parse(body);
-    // for (i = 0; i < JS.length; i++)
-    // {
-    //   var dateTime = JS[i].datetime;
-    //     var month = dateTime.substring(5,7);
-    //     var year = dateTime.substring(0,4);
-    //     var day = dateTime.substring(8,10);
-    //     var dateForm = month + "/" + day + "/" + year
-  
-    //   console.log("Name: " + JS[i].venue.name));
-    //   console.log("City: " + JS[i].venue.city));
-    //   console.log("Date: " + dateForm));
+//
 
 
     
 
 
-//   spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
-//     if (err) {
-//       return console.log('Error occurred: ' + err);
-//     }
-//     spotify.search({ type: 'track', query: 'All the Small Things' })
-//     .then(function(response) {
-//       console.log(response);
-//     })
-//     .catch(function(err) {
-//       console.log(err);
-//     });
-// //   console.log(JSON.stringify(data); 
-//   });
