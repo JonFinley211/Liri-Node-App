@@ -149,6 +149,7 @@ function runbands(term){
         doSearch();
     });
 };
+console.log("finnished");
 
 
 
