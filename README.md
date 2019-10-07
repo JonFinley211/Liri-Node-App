@@ -13,20 +13,21 @@ LIRI will then take the search and apply it to the Bands In Town API and return 
 
 ## Search Songs on Spotify
 To search for a song just type "node liri spotify-this-song **any song title**".
-LIRI will search the Spotify API and return several relevant results including links to listen to a portion of the song. **Below is an image of a Spotify search. I underlined in I highlighted how to type the command.**
+LIRI will search the Spotify API and return several relevant results including links to listen to a portion of the song. 
+**Below is an image of a Spotify search. I underlined in I highlighted how to type the command.**
 
 ![liri spotify](/images/doc3.png)
 
 ## Search Movies with OMDB
 To search for a movie just type "node liri movie-this **any movie title>".
-LIRI will search the Open Movie Database API and return the most relevant movie as well as Rotten Tomatoes score, year, actors, plot and more. **Below is an image of an OMDB search. .**
-
+LIRI will search the Open Movie Database API and return the most relevant movie as well as Rotten Tomatoes score, year, actors, plot and more. 
+**Below is an image of an OMDB search. .**
 ![liri movie](/images/doc2.png)
 
 ## Search something from a text file
 Lastly, if you're not sure what to search for you can simply run: "node liri do-what-it-says".
-This will return a random search from the file "random.txt". It could be a movie, concert, or song result. Currently it returns a song search for I "Want it That Way", if you haven't seen it I recommend it. **Below is an image of a random search.no**
-
+This will return a random search from the file "random.txt". It could be a movie, concert, or song result. Currently it returns a song search for I "Want it That Way", if you haven't seen it I recommend it. 
+**Below is an image of a random search.no**
 ![liri random](/images/doc4.png)
 
 ## To create LIRI ...
@@ -37,5 +38,5 @@ I mention this both so that you know how I got the app to work as well as so tha
 To get the random search with the do-what-it-says command I used the core fs package that is native to node. Using this I was able to run a search on a different document in the directory (random.txt). Inside of that file was held a random command and search value. Currently it holds "movie-this,Silverado", but can be updated to hold any of the three searches (movie, song, or concert).
 
 Take a look at my Portfolio Page
-* [About ME] https://jonfinley211.github.io/Responsive-portfolio/
+* ![About ME] https://jonfinley211.github.io/Responsive-portfolio/
 
