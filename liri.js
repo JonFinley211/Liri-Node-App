@@ -6,9 +6,7 @@ const moment = require("moment");
 const fs = require("fs");
 var axios = require("axios");
 var keys= require("./keys.js")
-
 var Spotify = require('node-spotify-api');
-// var spotify = new Spotify(keys.spotify)
 var spotify = new Spotify(keys.spotify);
 
 function runspot(term){
@@ -31,7 +29,6 @@ fs.appendFileSync("log.txt","link to preview song   :   " +data.tracks.items[0].
 });
  }
 
-console.log(selector)
 if (!selector){
   console.log("concert-this,spotify-this-song,movie-this,do-what-it-says`")
 }
@@ -47,9 +44,7 @@ if (selector ==="movie-this"){
     console.log("If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
   }
   runmovie()
-  // fs.appendFileSync("log.txt",+runmovie()+"\n");
-  
-  
+    
 }
 if (selector==="concert-this"){
   runbands(term)
@@ -67,16 +62,8 @@ else {
     console.log("not working")
 };
 
-// function bandsintown
-// console.log(term);
-// var bandsdata=
-function runmovie(){
-  
+function runmovie(){ 
 var queryUrl = "http://www.omdbapi.com/?t=" + term + "&y=&plot=short&apikey=trilogy";
-// console.log(term);
-// This line is just to help us debug against the actual URL.
-// console.log(queryUrl);
-
 axios.get(queryUrl).then(
   function(response) {
     console.log("**********MOVIE INFO*********");
@@ -95,17 +82,8 @@ fs.appendFileSync("log.txt","Country where Porduced: "+ response.data.Country+"\
  fs.appendFileSync("log.txt","Language of Movie     : "+ response.data.Language+"\n"); 
     console.log("Plot Summery          : " + response.data.Plot);
  fs.appendFileSync("log.txt","Plot Summery          : " + response.data.Plot+"\n");
-    // * Title of the movie.
-    //    * Year the movie came out.
-    //    * IMDB Rating of the movie.
-    //    * Rotten Tomatoes Rating of the movie.
-    //    * Country where the movie was produced.
-    //    * Language of the movie.
-    //    * Plot of the movie.
-    //    * Actors in the movie.
   })
   
-
   .catch(function(error) {
     if (error.response) {
       // The request was made and the server responded with a status code
@@ -128,7 +106,6 @@ fs.appendFileSync("log.txt","Country where Porduced: "+ response.data.Country+"\
     console.log(error.config);
   });
 }
-
 function runbands(term){
   axios.get("https://rest.bandsintown.com/artists/"+ term +"/events?app_id=codingbootcamp")
   .then(
@@ -142,9 +119,7 @@ function runbands(term){
       console.log("venue         : "+response.data[0].venue.name);
       console.log("Date of Show  : " +moment(response.data[0].datetime).format('MM/DD/YYYY'));
       fs.appendFileSync("log.txt","Date of Show  : " +moment(response.data[0].datetime).format('MM/DD/YYYY')+"\n");
-     
     });
-
   }
 
   function doWhat() {
@@ -169,14 +144,12 @@ function runbands(term){
                 runspot(term,selector);
             } else if (selector === "movie-this") {
                 runmovie();
-
             }
         }
         doSearch();
     });
 };
 
-//
 
 
     

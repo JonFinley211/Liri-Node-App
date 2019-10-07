@@ -1,0 +1,23 @@
+**********EVENT INFO*********
+band name     : green day
+upcoming city : Singapore
+venue         : Singapore Indoor Stadium
+Date of Show  : 03/08/2020
+**********MOVIE INFO*********
+Movie Title: Frozen
+Release Year          : 2013
+IMDB Rating           : 7.5
+Rotten Tomatoes Rating: 7.5/10
+Country where Porduced: USA
+Language of Movie     : English, Norwegian
+Plot Summery          : When the newly-crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.
+**********SONG INFO*********
+this song's artist is  :   Nirvana
+this song's name is    :   Smells Like Teen Spirit
+this song's album name :   Nevermind (Remastered)
+link to preview song   :   https://open.spotify.com/artist/6olE6TJLqED3rqDCT0FyPh
+**********SONG INFO*********
+this song's artist is  :   Backstreet Boys
+this song's name is    :   I Want It That Way
+this song's album name :   The Hits--Chapter One
+link to preview song   :   https://open.spotify.com/artist/5rSXSAkZ67PYJSvpUpkOr7
