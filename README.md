@@ -10,11 +10,15 @@ LIRI will then take the search and apply it to the Bands In Town API and return 
 **Below is an image of a BandsInTown search.**
 ![liri concert](/images/doc1.png)
 
+
 ## Search Songs on Spotify
 To search for a song just type "node liri spotify-this-song **any song title**".
 LIRI will search the Spotify API and return several relevant results including links to listen to a portion of the song. 
 **Below is an image of a Spotify search.**
 ![liri spotify](/images/doc3.png)
+https://gph.is/g/ZxPXkbz
+https://media.giphy.com/media/XbPNTadUHLJkC5ymqB/giphy.gif
+https://giphy.com/gifs/XbPNTadUHLJkC5ymqB/html5
 
 ## Search Movies with OMDB
 To search for a movie just type "node liri movie-this **any movie title>".
@@ -35,6 +39,8 @@ the do-what-it-says uses the fs package in node. Using this I was able to run a 
 
 ## Log.txt using fs package
 the node app liri will also store recent searches in a text file named log.txt
+(/images/doc5.png)
+
 
 Take a look at my Portfolio Page
 https://jonfinley211.github.io/Responsive-portfolio/

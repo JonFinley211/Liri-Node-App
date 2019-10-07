@@ -59,7 +59,7 @@ else if (selector === "show") {
 }
 
 else {
-    console.log("not working")
+   
 };
 
 function runmovie(){ 
