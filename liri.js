@@ -19,10 +19,15 @@ spotify.search({ type: 'track', query: term }, function(err, data) {
  
 // console.log(JSON.stringify(data.tracks.items[0], null, 2));
 // console.log(data.tracks.items[0].album.artists[0]);
-console.log("link to preview song   :   " +data.tracks.items[0].album.artists[0].external_urls.spotify);
+fs.appendFileSync("log.txt", "**********SONG INFO*********\n");
 console.log("this song's artist is  :   " + data.tracks.items[0].album.artists[0].name);
+fs.appendFileSync("log.txt","this song's artist is  :   " + data.tracks.items[0].album.artists[0].name+"\n");
 console.log("this song's name is    :   "+data.tracks.items[0].name);
+fs.appendFileSync("log.txt","this song's name is    :   "+data.tracks.items[0].name+"\n");
 console.log("this song's album name :   "+ data.tracks.items[0].album.name);
+fs.appendFileSync("log.txt","this song's album name :   "+ data.tracks.items[0].album.name+"\n");
+console.log("link to preview song   :   " +data.tracks.items[0].album.artists[0].external_urls.spotify);
+fs.appendFileSync("log.txt","link to preview song   :   " +data.tracks.items[0].album.artists[0].external_urls.spotify+"\n");
 });
  }
 
@@ -42,6 +47,8 @@ if (selector ==="movie-this"){
     console.log("If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
   }
   runmovie()
+  // fs.appendFileSync("log.txt",+runmovie()+"\n");
+  
   
 }
 if (selector==="concert-this"){
@@ -72,14 +79,22 @@ var queryUrl = "http://www.omdbapi.com/?t=" + term + "&y=&plot=short&apikey=tril
 
 axios.get(queryUrl).then(
   function(response) {
+    console.log("**********MOVIE INFO*********");
+    fs.appendFileSync("log.txt", "**********MOVIE INFO*********\n");
     console.log("Movie Title           : " + response.data.Title);
+    fs.appendFileSync("log.txt", "Movie Title: " + response.data.Title+"\n");
     console.log("Release Year          : " + response.data.Year);
+   fs.appendFileSync("log.txt","Release Year          : " + response.data.Year+"\n")
     console.log("IMDB Rating           : " + response.data.imdbRating);
-    console.log("Rotten Tomatoes Rating: "+ response.data.Ratings[0].Value);
-    console.log("Country where Porduced: "+ response.data.Country);
+  fs.appendFileSync("log.txt","IMDB Rating           : " + response.data.imdbRating+"\n");
+   console.log("Rotten Tomatoes Rating: "+ response.data.Ratings[0].Value);
+   fs.appendFileSync("log.txt","Rotten Tomatoes Rating: "+ response.data.Ratings[0].Value+"\n"); 
+   console.log("Country where Porduced: "+ response.data.Country);
+fs.appendFileSync("log.txt","Country where Porduced: "+ response.data.Country+"\n");
     console.log("Language of Movie     : "+ response.data.Language);
+ fs.appendFileSync("log.txt","Language of Movie     : "+ response.data.Language+"\n"); 
     console.log("Plot Summery          : " + response.data.Plot);
-    
+ fs.appendFileSync("log.txt","Plot Summery          : " + response.data.Plot+"\n");
     // * Title of the movie.
     //    * Year the movie came out.
     //    * IMDB Rating of the movie.
@@ -89,6 +104,8 @@ axios.get(queryUrl).then(
     //    * Plot of the movie.
     //    * Actors in the movie.
   })
+  
+
   .catch(function(error) {
     if (error.response) {
       // The request was made and the server responded with a status code
@@ -116,9 +133,16 @@ function runbands(term){
   axios.get("https://rest.bandsintown.com/artists/"+ term +"/events?app_id=codingbootcamp")
   .then(
     function (response) {
+      fs.appendFileSync("log.txt", "**********EVENT INFO*********\n");
+      fs.appendFileSync("log.txt","band name     : "+term+"\n");
+      console.log("band name     : "+term);
+      fs.appendFileSync("log.txt","upcoming city : " +response.data[0].venue.city+"\n");
       console.log("upcoming city : " +response.data[0].venue.city);
+      fs.appendFileSync("log.txt","venue         : "+response.data[0].venue.name+"\n");
       console.log("venue         : "+response.data[0].venue.name);
       console.log("Date of Show  : " +moment(response.data[0].datetime).format('MM/DD/YYYY'));
+      fs.appendFileSync("log.txt","Date of Show  : " +moment(response.data[0].datetime).format('MM/DD/YYYY')+"\n");
+     
     });
 
   }
