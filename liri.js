@@ -39,6 +39,7 @@ if (selector === "spotify-this-song") {
 if (selector ==="movie-this"){
   if (!term){
     term='Mr.Nobody'
+    console.log("If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
   }
   runmovie()
   
@@ -130,7 +131,6 @@ function runbands(term){
             return console.log(error);
         }
         // We will then run the search
-        console.log(data);
 
         // Then split it by commas (to make it more readable)
         let dataArr = data.split(",");
