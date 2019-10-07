@@ -36,5 +36,3 @@ I mention this both so that you know how I got the app to work as well as so tha
 
 To get the random search with the do-what-it-says command I used the core fs package that is native to node. Using this I was able to run a search on a different document in the directory (random.txt). Inside of that file was held a random command and search value. Currently it holds "movie-this,Silverado", but can be updated to hold any of the three searches (movie, song, or concert).
 
-## Also
-> If you have any questions about this project or would like to work with me in the future please don't heistate to send me an email: cmmclaughlin7@gmail.com
