@@ -1,21 +1,19 @@
 # LIRI-NODE-APP
-A Node based SIRI CLI app that makes searches to Spotify, BandsInTown, and OMDB API's.
+A Node based SIRI CLI app that makes searches to Spotify, BandsInTown, and OMDB API's. 
 
-# To begin just type "node liri" in the command line and hit enter
-LIRI will then give you the options for how use the app.
+# To begin just type "node liri" 
+LIRI will then give you the options
 
 ## Search Concerts with Bands In Town
 To search for a concert just type "node liri concert-this **any artist who is touring**".
 LIRI will then take the search and apply it to the Bands In Town API and return the soonest result for a concert for that artist. 
 **Below is an image of a BandsInTown search.**
-
 ![liri concert](/images/doc1.png)
 
 ## Search Songs on Spotify
 To search for a song just type "node liri spotify-this-song **any song title**".
 LIRI will search the Spotify API and return several relevant results including links to listen to a portion of the song. 
-**Below is an image of a Spotify search. I underlined in I highlighted how to type the command.**
-
+**Below is an image of a Spotify search.**
 ![liri spotify](/images/doc3.png)
 
 ## Search Movies with OMDB
@@ -31,11 +29,12 @@ This will return a random search from the file "random.txt". It could be a movie
 ![liri random](/images/doc4.png)
 
 ## To create LIRI ...
-I had to get access to the three API's that were used to power the app; Spotify, BandsInTown, and OMDB. I created a .env file to hide the Spotify keys. These included a Client ID and a Secret Key. These were then called into a keys.js file, which was then required into the main liri.js file. This allows the keys to remain secret even while saving my work publicly to GitHub.
+Liri.js uses three API's to power the app; Spotify, BandsInTown, and OMDB. an .env file to hide the Spotify keys. These included a Client ID and a Secret Key. These were then called into a keys.js file, which was then required into the main liri.js file. This allows the keys to remain secret even while saving my work publicly to GitHub.
 
-I mention this both so that you know how I got the app to work as well as so that you could run the app yourself if you would like to clone the repository.
+the do-what-it-says uses the fs package in node. Using this I was able to run a search on a text file called (random.txt). Inside of that file was held a random command and search value. Currently it holds "spotifuy-this-song,"I Want it that Way", but can be updated to hold any of the three searches (movie, song, or concert).
 
-To get the random search with the do-what-it-says command I used the core fs package that is native to node. Using this I was able to run a search on a different document in the directory (random.txt). Inside of that file was held a random command and search value. Currently it holds "movie-this,Silverado", but can be updated to hold any of the three searches (movie, song, or concert).
+## Log.txt using fs package
+the node app liri will also store recent searches in a text file named log.txt
 
 Take a look at my Portfolio Page
 https://jonfinley211.github.io/Responsive-portfolio/
