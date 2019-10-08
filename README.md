@@ -28,7 +28,7 @@ This will return a random search from the file "random.txt". It could be a movie
 **do-what-it-says**
 ![liri random](/images/doc4.png)
 
-## To create LIRI ...
+## About LIRI .
 Liri.js uses three API's to power the app; Spotify, BandsInTown, and OMDB. an .env file to hide the Spotify keys. These included a Client ID and a Secret Key. These were then called into a keys.js file, which was then required into the main liri.js file. This allows the keys to remain secret even while saving work publicly to GitHub.
 
 ## Log.txt using fs package
