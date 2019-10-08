@@ -38,7 +38,7 @@ the do-what-it-says uses the fs package in node. Using this I was able to run a 
 
 ## Log.txt using fs package
 the node app liri will also store recent searches in a text file named log.txt
-(/images/doc5.png)
+![lori random](/images/doc5.png)
 
 
 Take a look at my Portfolio Page
