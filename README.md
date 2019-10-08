@@ -16,7 +16,7 @@ To search for a song just type "node liri spotify-this-song **any song title**".
 LIRI will search the Spotify API and return several relevant results including links to listen to a portion of the song. 
 **Below is an image of a Spotify search.**
 ![liri spotify](/images/doc3.png)
-![liri spotify](/images/spotgif.gif)
+![liri spotify](/images/sppotgif.gif)
 
 
 ## Search Movies with OMDB
