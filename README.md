@@ -36,9 +36,9 @@ the node app liri will also store recent searches in a text file named log.txt
 ![lori random](/images/doc5.png)
 
 ## How to install
-Clone Repository
-NPM Install 
-type node liri do-what-it-says 
+Clone Repository  
+NPM Install   
+type node liri do-what-it-says    
 
 
 ## Take a look at my Portfolio Page
