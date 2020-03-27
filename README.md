@@ -38,7 +38,7 @@ the node app liri will also store recent searches in a text file named log.txt
 ## How to install
 Clone Repository  
 NPM Install   
-type node liri do-what-it-says    
+Type node liri do-what-it-says    
 
 
 ## Take a look at my Portfolio Page
