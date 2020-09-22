@@ -1,4 +1,4 @@
-# LIRI-NODE-APP
+# Jon Finley's LIRI-NODE-APP
 A Node based SIRI CLI app that makes searches to Spotify, BandsInTown, and OMDB API's. 
 
 ## LIRI can search Concerts with Bands In Town
